@@ -1,5 +1,6 @@
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -15,17 +16,16 @@ import javax.swing.event.ChangeListener;
 public class ColorViewer extends JFrame
 {
 	private static final long serialVersionUID = 1L;
-	JButton       btn;
-	JLabel        label;
-	JColorChooser picker;
-	JPanel        pane;
+	private JButton       btn;
+	private JLabel        label;
+	private JColorChooser picker;
+	private JPanel        pane;
 	
 	public ColorViewer()
 	{
 		super("Hello machine learning!");
 		
 		NeuralNet.train(100000);
-		NeuralNet.isLight(0.63921568627f, 1.0f, 0.89803921568f);
 		
 		init();
 		org();
@@ -40,8 +40,9 @@ public class ColorViewer extends JFrame
 		setLocationRelativeTo(null);
 		setLayout(new BorderLayout());
 		
-		btn    = new JButton("Print");
+		btn    = new JButton("Print RGB array (Training purposes)");
 		label  = new JLabel("Hello Machine Learning!");
+		label.setFont(new Font("Arial", Font.BOLD, 24));
 		picker = new JColorChooser();
 		pane   = new JPanel();
 		pane.setLayout(new GridBagLayout());
@@ -49,6 +50,7 @@ public class ColorViewer extends JFrame
 	
 	private void org()
 	{
+		picker.setPreviewPanel(new JPanel());
 		pane.add(label);
 		add(picker, BorderLayout.NORTH);
 		add(pane, BorderLayout.CENTER);

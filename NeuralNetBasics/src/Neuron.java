@@ -2,8 +2,8 @@ import java.util.Random;
 
 public class Neuron
 {
-	float[] weights;
-	float   learning_rate;
+	protected float[] weights;
+	protected float   learning_rate;
 	
 	public Neuron(int inputs, float lr)
 	{
@@ -15,7 +15,7 @@ public class Neuron
 			weights[i] = rnd.nextFloat();
 	}
 	
-	float think(float[] input)
+	public float think(float[] input)
 	{
 		float sum = 0.0f;
 		for(int i = 0; i < weights.length; i++)
@@ -23,7 +23,7 @@ public class Neuron
 		return 1.0f / ((float) Math.exp(-sum) + 1.0f);
 	}
 	
-	void train(float[] input, float expected_output)
+	public void train(float[] input, float expected_output)
 	{
 		float guess = think(input);
 		float error = expected_output - guess;

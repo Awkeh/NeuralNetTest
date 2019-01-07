@@ -1,7 +1,17 @@
+import javax.swing.UIManager;
+
 public class Main
 {
 	public static void main(String[] args)
 	{
-		new ColorViewer();
+		try
+		{
+			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+		}
+		catch(Exception e) {}
+		finally
+		{
+			new ColorViewer();
+		}
 	}
 }
