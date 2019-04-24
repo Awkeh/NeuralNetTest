@@ -1,5 +1,5 @@
 # Neural network test
-Simple (single neuron) neural network that classifies colors into two categories (light/dark) based on their lightness.
+Simple perceptron that classifies colors into two categories (light/dark) based on their lightness.
 
 ## Screenshots
 
